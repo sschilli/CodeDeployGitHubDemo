@@ -31,8 +31,9 @@ jobs:
 
     - name: Deploy to server
       run: |
-        echo "Hello, World" \
-        -n
+        echo -n \
+        "Hello, World"
+        
     # aws deploy create-deployment \
     # --application-name CodeDeployGitHubDemo-App \
     # --deployment-config-name CodeDeployDefault.OneAtATime \
