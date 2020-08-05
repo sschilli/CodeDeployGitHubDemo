@@ -32,8 +32,10 @@ jobs:
     - name: Deploy to server
       run: |
         echo -n \
-        "Hello, World"
-        
+        "Hello, World"\
+        " how are you?"
+        echo "good"
+
     # aws deploy create-deployment \
     # --application-name CodeDeployGitHubDemo-App \
     # --deployment-config-name CodeDeployDefault.OneAtATime \
