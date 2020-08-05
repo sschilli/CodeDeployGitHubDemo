@@ -31,24 +31,9 @@ jobs:
 
     - name: Deploy to server
       run: |
-        echo -n \
-        "Hello, World"\
-        " how are you?"
-        echo "good"
-
-    # aws deploy create-deployment \
-    # --application-name CodeDeployGitHubDemo-App \
-    # --deployment-config-name CodeDeployDefault.OneAtATime \
-    # --deployment-group-name CodeDeployGitHubDemo-DepGrp \
-    # --description "My GitHub deployment demo" \
-    # --github-location repository=sschilli/CodeDeployGitHubDemo,commitId=commit-id
-
-    # Runs a single command using the runners shell
-    - name: Run a one-line script
-      run: echo Hello, world!
-
-    # Runs a set of commands using the runners shell
-    - name: Run a multi-line script
-      run: |
-        echo Add other actions to build,
-        echo test, and deploy your project.
+        aws deploy create-deployment \
+        --application-name CodeDeployGitHubDemo-App \
+        --deployment-config-name CodeDeployDefault.OneAtATime \
+        --deployment-group-name CodeDeployGitHubDemo-DepGrp \
+        --description "Deploying from master" \
+        --github-location repository=sschilli/CodeDeployGitHubDemo,commitId=$GITHUB_SHA
