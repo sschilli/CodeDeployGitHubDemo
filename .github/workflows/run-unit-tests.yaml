@@ -45,3 +45,4 @@ jobs:
         uses: php-actions/phpunit@v8
         with:
           configuration: laravel/phpunit.xml
+          bootstrap: laravel/vendor/autoload.php
