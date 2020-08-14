@@ -38,7 +38,7 @@ jobs:
      
       - uses: php-actions/composer@v1
         with:
-          args: -d laravel
+          args: --working-dir=laravel
           
 
       - name: Run PHPUnit Tests
