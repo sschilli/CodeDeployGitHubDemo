@@ -15,9 +15,9 @@ jobs:
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
     # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
-    - name: Run unit tests
-      uses: actions/checkout@v2
-      uses: php-actions/composer@v1
-      uses: php-actions/phpunit@v8
-      with:
-        configuration: laravel/phpunit.xml
+      - uses: actions/checkout@v2
+      - uses: php-actions/composer@v1
+      - name: Run PHPUnit Tests
+        uses: php-actions/phpunit@v8
+        with:
+          configuration: laravel/phpunit.xml
